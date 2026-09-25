@@ -1,0 +1,264 @@
+% --- Table 1a: Overall Retrieval Performance ---
+\begin{table}
+\caption{Overall Retrieval performance (nDCG@10) across multilingual query transformation conditions.}
+\label{tab:retrieval_performance_overall}
+\begin{tabular}{lrrrrrr}
+\toprule
+Condition & query_llm_mt & query_nllb & query_opus & query_paraphrase & query_reference & query_synthetic \\
+System &  &  &  &  &  &  \\
+\midrule
+BGE-M3 & 0.6345 & 0.5734 & 0.5057 & 0.6425 & 0.6489 & 0.6305 \\
+BM25 & 0.2583 & 0.1813 & 0.1634 & 0.3171 & 0.3879 & 0.3935 \\
+Hybrid-RRF & 0.4367 & 0.3655 & 0.3130 & 0.4687 & 0.5330 & 0.5031 \\
+LaBSE & 0.4263 & 0.3440 & 0.3022 & 0.4255 & 0.4355 & 0.4525 \\
+Qwen3-0.6B & 0.6306 & 0.5733 & 0.5055 & 0.6429 & 0.6532 & 0.6373 \\
+mE5-base & 0.6322 & 0.5632 & 0.5011 & 0.6365 & 0.6530 & 0.6352 \\
+mE5-large & 0.6394 & 0.5840 & 0.5223 & 0.6425 & 0.6546 & 0.6392 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 1b: Indonesian Retrieval Performance ---
+\begin{table}
+\caption{Indonesian (id) Retrieval performance (nDCG@10) across transformation conditions.}
+\label{tab:retrieval_performance_id}
+\begin{tabular}{lrrrrrr}
+\toprule
+Condition & query_llm_mt & query_nllb & query_opus & query_paraphrase & query_reference & query_synthetic \\
+System &  &  &  &  &  &  \\
+\midrule
+BGE-M3 & 0.5141 & 0.5053 & 0.4792 & 0.5231 & 0.5285 & 0.5508 \\
+BM25 & 0.4046 & 0.2991 & 0.2797 & 0.4311 & 0.4245 & 0.4777 \\
+Hybrid-RRF & 0.4787 & 0.4077 & 0.3819 & 0.4833 & 0.4962 & 0.5145 \\
+LaBSE & 0.3725 & 0.3271 & 0.2964 & 0.3879 & 0.3535 & 0.4073 \\
+Qwen3-0.6B & 0.5155 & 0.5098 & 0.4874 & 0.5294 & 0.5415 & 0.5485 \\
+mE5-base & 0.5236 & 0.5002 & 0.4854 & 0.5252 & 0.5392 & 0.5454 \\
+mE5-large & 0.5270 & 0.5117 & 0.4927 & 0.5315 & 0.5413 & 0.5492 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 1c: Thai Retrieval Performance ---
+\begin{table}
+\caption{Thai (th) Retrieval performance (nDCG@10) across transformation conditions.}
+\label{tab:retrieval_performance_th}
+\begin{tabular}{lrrrrrr}
+\toprule
+Condition & query_llm_mt & query_nllb & query_opus & query_paraphrase & query_reference & query_synthetic \\
+System &  &  &  &  &  &  \\
+\midrule
+BGE-M3 & 0.7134 & 0.5959 & 0.4854 & 0.7210 & 0.7273 & 0.6683 \\
+BM25 & 0.0870 & 0.0389 & 0.0188 & 0.1771 & 0.3278 & 0.2728 \\
+Hybrid-RRF & 0.3572 & 0.2804 & 0.2054 & 0.4144 & 0.5283 & 0.4469 \\
+LaBSE & 0.4548 & 0.3266 & 0.2809 & 0.4453 & 0.4979 & 0.4615 \\
+Qwen3-0.6B & 0.7022 & 0.5863 & 0.4769 & 0.7134 & 0.7202 & 0.6809 \\
+mE5-base & 0.7010 & 0.5727 & 0.4651 & 0.7062 & 0.7214 & 0.6815 \\
+mE5-large & 0.7103 & 0.6057 & 0.5075 & 0.7126 & 0.7248 & 0.6858 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 2: Evaluation Invariance Metrics (Overall) ---
+\begin{table}
+\caption{Evaluation invariance and ranking stability metrics relative to Native Reference (C0).}
+\label{tab:evaluation_invariance_overall}
+\begin{tabular}{lrrrrrr}
+\toprule
+Condition & Mean nDCG@10 & Mean Shift (Δ) & Kendall Tau (τ_b) & Spearman Rho (ρ) & Pairwise Flips & Flip Rate (%) \\
+\midrule
+query_llm_mt & 0.5226 & -0.0440 & 0.7143 & 0.8571 & 3 & 14.2857 \\
+query_nllb & 0.4550 & -0.1116 & 0.8095 & 0.8929 & 2 & 9.5238 \\
+query_opus & 0.4019 & -0.1647 & 0.8095 & 0.8929 & 2 & 9.5238 \\
+query_paraphrase & 0.5394 & -0.0272 & 0.8095 & 0.9286 & 2 & 9.5238 \\
+query_reference & 0.5666 & 0.0000 & 1.0000 & 1.0000 & 0 & 0.0000 \\
+query_synthetic & 0.5559 & -0.0107 & 1.0000 & 1.0000 & 0 & 0.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 3a: Significance-Aware System-Pair Instability (Overall) ---
+\begin{table}
+\caption{Significance-aware system-pair decision instability (10,000 Paired Bootstrap CIs, Overall).}
+\label{tab:pairwise_significance_instability_overall}
+\begin{tabular}{lrrr}
+\toprule
+ & Total_Pairs & Changed_Decisions & Instability_Rate (%) \\
+Condition &  &  &  \\
+\midrule
+query_llm_mt & 21 & 2 & 9.52 \\
+query_nllb & 21 & 3 & 14.29 \\
+query_opus & 21 & 3 & 14.29 \\
+query_paraphrase & 21 & 1 & 4.76 \\
+query_synthetic & 21 & 2 & 9.52 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 3b: Significance-Aware System-Pair Instability (Indonesian) ---
+\begin{table}
+\caption{Significance-aware system-pair decision instability (10,000 Paired Bootstrap CIs, Indonesian [id]).}
+\label{tab:pairwise_significance_instability_id}
+\begin{tabular}{lrrr}
+\toprule
+ & Total_Pairs & Changed_Decisions & Instability_Rate (%) \\
+Condition &  &  &  \\
+\midrule
+query_llm_mt & 21 & 3 & 14.29 \\
+query_nllb & 21 & 3 & 14.29 \\
+query_opus & 21 & 3 & 14.29 \\
+query_paraphrase & 21 & 2 & 9.52 \\
+query_synthetic & 21 & 2 & 9.52 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 3c: Significance-Aware System-Pair Instability (Thai) ---
+\begin{table}
+\caption{Significance-aware system-pair decision instability (10,000 Paired Bootstrap CIs, Thai [th]).}
+\label{tab:pairwise_significance_instability_th}
+\begin{tabular}{lrrr}
+\toprule
+ & Total_Pairs & Changed_Decisions & Instability_Rate (%) \\
+Condition &  &  &  \\
+\midrule
+query_llm_mt & 21 & 1 & 4.76 \\
+query_nllb & 21 & 1 & 4.76 \\
+query_opus & 21 & 2 & 9.52 \\
+query_paraphrase & 21 & 1 & 4.76 \\
+query_synthetic & 21 & 2 & 9.52 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 4: Retriever-Family Interaction Contrasts ---
+\begin{table}
+\caption{Retriever-family interaction contrasts D = Delta_family1 - Delta_family2 with 10,000-bootstrap 95% CIs. Negative contrast (D < 0) denotes greater performance degradation for Lexical/Hybrid systems than Dense systems.}
+\label{tab:retriever_family_interactions}
+\begin{tabular}{llrlr}
+\toprule
+Comparison & Condition & Mean Contrast D & 95% CI & Significant (excludes 0) \\
+\midrule
+Lexical vs Dense & query_paraphrase & -0.0597 & [-0.0943, -0.0261] & True \\
+Lexical vs Dense & query_nllb & -0.1251 & [-0.1675, -0.0827] & True \\
+Lexical vs Dense & query_opus & -0.0828 & [-0.1281, -0.0386] & True \\
+Lexical vs Dense & query_llm_mt & -0.1132 & [-0.1520, -0.0755] & True \\
+Lexical vs Dense & query_synthetic & 0.0157 & [-0.0248, 0.0549] & False \\
+Hybrid vs Dense & query_paraphrase & -0.0532 & [-0.0797, -0.0277] & True \\
+Hybrid vs Dense & query_nllb & -0.0861 & [-0.1170, -0.0555] & True \\
+Hybrid vs Dense & query_opus & -0.0783 & [-0.1080, -0.0486] & True \\
+Hybrid vs Dense & query_llm_mt & -0.0799 & [-0.1084, -0.0527] & True \\
+Hybrid vs Dense & query_synthetic & -0.0198 & [-0.0485, 0.0080] & False \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 5: Behavioral Ranking Shifts ---
+\begin{table}
+\caption{Behavioral ranking shifts: Top-10 Jaccard Overlap, Rank-Biased Overlap (RBO, p=0.9), and Target Document Reciprocal Rank Shift (Delta RR) relative to C0.}
+\label{tab:behavioral_shifts}
+\begin{tabular}{llrrr}
+\toprule
+System & Condition & Jaccard@10 & RBO@10 (p=0.9) & Mean ΔRR \\
+\midrule
+BGE-M3 & query_paraphrase & 0.6562 & 0.5273 & -0.0066 \\
+BGE-M3 & query_nllb & 0.5331 & 0.4484 & -0.1250 \\
+BGE-M3 & query_opus & 0.4342 & 0.3755 & -0.2262 \\
+BGE-M3 & query_llm_mt & 0.6477 & 0.5206 & -0.0240 \\
+BGE-M3 & query_synthetic & 0.2057 & 0.2954 & -0.0152 \\
+BM25 & query_paraphrase & 0.4171 & 0.3175 & -0.0767 \\
+BM25 & query_nllb & 0.3554 & 0.2575 & -0.2978 \\
+BM25 & query_opus & 0.3735 & 0.2638 & -0.3195 \\
+BM25 & query_llm_mt & 0.4236 & 0.3055 & -0.1505 \\
+BM25 & query_synthetic & 0.3355 & 0.2696 & 0.0349 \\
+Hybrid-RRF & query_paraphrase & 0.4365 & 0.3533 & -0.0911 \\
+Hybrid-RRF & query_nllb & 0.3630 & 0.2866 & -0.2764 \\
+Hybrid-RRF & query_opus & 0.3353 & 0.2656 & -0.3298 \\
+Hybrid-RRF & query_llm_mt & 0.4185 & 0.3329 & -0.1375 \\
+Hybrid-RRF & query_synthetic & 0.2442 & 0.2538 & -0.0232 \\
+LaBSE & query_paraphrase & 0.4549 & 0.3928 & -0.0112 \\
+LaBSE & query_nllb & 0.4616 & 0.3713 & -0.1504 \\
+LaBSE & query_opus & 0.3966 & 0.3289 & -0.2057 \\
+LaBSE & query_llm_mt & 0.4846 & 0.4100 & -0.0020 \\
+LaBSE & query_synthetic & 0.1410 & 0.1724 & 0.0276 \\
+Qwen3-0.6B & query_paraphrase & 0.6094 & 0.5136 & -0.0133 \\
+Qwen3-0.6B & query_nllb & 0.4951 & 0.4298 & -0.1254 \\
+Qwen3-0.6B & query_opus & 0.4309 & 0.3758 & -0.2164 \\
+Qwen3-0.6B & query_llm_mt & 0.5951 & 0.4935 & -0.0428 \\
+Qwen3-0.6B & query_synthetic & 0.2606 & 0.3320 & -0.0045 \\
+mE5-base & query_paraphrase & 0.6177 & 0.5122 & -0.0190 \\
+mE5-base & query_nllb & 0.5019 & 0.4302 & -0.1458 \\
+mE5-base & query_opus & 0.4273 & 0.3719 & -0.2345 \\
+mE5-base & query_llm_mt & 0.6204 & 0.5124 & -0.0321 \\
+mE5-base & query_synthetic & 0.2311 & 0.3096 & -0.0128 \\
+mE5-large & query_paraphrase & 0.6736 & 0.5333 & -0.0180 \\
+mE5-large & query_nllb & 0.5434 & 0.4541 & -0.1091 \\
+mE5-large & query_opus & 0.4526 & 0.3915 & -0.2010 \\
+mE5-large & query_llm_mt & 0.6632 & 0.5323 & -0.0273 \\
+mE5-large & query_synthetic & 0.2493 & 0.3214 & -0.0112 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 6a: Surface-Form Fidelity Correlation (Overall) ---
+\begin{table}
+\caption{Pearson and Spearman correlations between query surface-form / round-trip textual fidelity (chrF) and retrieval score shift (Delta nDCG@10, Overall).}
+\label{tab:translation_correlations_overall}
+\begin{tabular}{lrrrrr}
+\toprule
+Condition & Mean chrF Fidelity & Pearson r (chrF vs Δ) & p-value (r) & Spearman ρ (chrF vs Δ) & p-value (ρ) \\
+\midrule
+query_paraphrase & 0.5759 & 0.0392 & 0.5181 & 0.0106 & 0.8612 \\
+query_nllb & 0.5157 & 0.4029 & 0.0000 & 0.4636 & 0.0000 \\
+query_opus & 0.4525 & 0.4960 & 0.0000 & 0.5873 & 0.0000 \\
+query_llm_mt & 0.6301 & 0.2136 & 0.0004 & 0.2170 & 0.0003 \\
+query_synthetic & 0.2734 & -0.0121 & 0.8451 & -0.0348 & 0.5731 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 6b: Surface-Form Fidelity Correlation (Indonesian) ---
+\begin{table}
+\caption{Pearson and Spearman correlations between query surface-form / round-trip textual fidelity (chrF) and retrieval score shift (Delta nDCG@10, Indonesian [id]).}
+\label{tab:translation_correlations_id}
+\begin{tabular}{lrrrrr}
+\toprule
+Condition & Mean chrF Fidelity & Pearson r (chrF vs Δ) & p-value (r) & Spearman ρ (chrF vs Δ) & p-value (ρ) \\
+\midrule
+query_paraphrase & 0.5707 & 0.0910 & 0.2679 & -0.0231 & 0.7794 \\
+query_nllb & 0.6093 & 0.4459 & 0.0000 & 0.4457 & 0.0000 \\
+query_opus & 0.5964 & 0.5280 & 0.0000 & 0.5036 & 0.0000 \\
+query_llm_mt & 0.6722 & 0.2329 & 0.0041 & 0.2340 & 0.0040 \\
+query_synthetic & 0.2636 & -0.1012 & 0.2243 & -0.1543 & 0.0629 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% --- Table 6c: Surface-Form Fidelity Correlation (Thai) ---
+\begin{table}
+\caption{Pearson and Spearman correlations between query surface-form / round-trip textual fidelity (chrF) and retrieval score shift (Delta nDCG@10, Thai [th]).}
+\label{tab:translation_correlations_th}
+\begin{tabular}{lrrrrr}
+\toprule
+Condition & Mean chrF Fidelity & Pearson r (chrF vs Δ) & p-value (r) & Spearman ρ (chrF vs Δ) & p-value (ρ) \\
+\midrule
+query_paraphrase & 0.5807 & 0.0376 & 0.6476 & 0.0443 & 0.5904 \\
+query_nllb & 0.4019 & 0.2228 & 0.0061 & 0.2605 & 0.0013 \\
+query_opus & 0.2855 & 0.2765 & 0.0006 & 0.3498 & 0.0000 \\
+query_llm_mt & 0.5784 & 0.0967 & 0.2390 & 0.0619 & 0.4514 \\
+query_synthetic & 0.2860 & 0.1057 & 0.2059 & 0.0946 & 0.2578 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+

@@ -1,0 +1,11 @@
+Comparison,Condition,Mean Contrast D,95% CI,Significant (excludes 0)
+Lexical vs Dense,query_paraphrase,-0.13206956658846983,"[-0.1861, -0.0808]",True
+Lexical vs Dense,query_nllb,-0.14797956507467133,"[-0.2181, -0.0792]",True
+Lexical vs Dense,query_opus,-0.07385252065953718,"[-0.1481, -0.0006]",True
+Lexical vs Dense,query_llm_mt,-0.2188622203271825,"[-0.2793, -0.1595]",True
+Lexical vs Dense,query_synthetic,-0.012229670727759824,"[-0.0745, 0.0519]",False
+Hybrid vs Dense,query_paraphrase,-0.09533357557625034,"[-0.1368, -0.0552]",True
+Hybrid vs Dense,query_nllb,-0.10702734938814523,"[-0.1560, -0.0607]",True
+Hybrid vs Dense,query_opus,-0.0877718363059339,"[-0.1337, -0.0408]",True
+Hybrid vs Dense,query_llm_mt,-0.14913854762919784,"[-0.1923, -0.1088]",True
+Hybrid vs Dense,query_synthetic,-0.03874903459364479,"[-0.0803, 0.0024]",False
